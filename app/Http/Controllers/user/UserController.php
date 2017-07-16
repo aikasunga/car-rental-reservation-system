@@ -21,10 +21,12 @@ class UserController extends Controller
     }
 
     public function kawasaki(){
-
+    	$cars = Car::where('category_id', 3)->get();
+    	return view('cars.kawasaki', compact('cars'));
     }
 
     public function yamaha(){
-    	
+    	$cars = Car::where('category_id', 4)->get();
+    	return view('cars.yamaha', compact('cars'));
     }
 }

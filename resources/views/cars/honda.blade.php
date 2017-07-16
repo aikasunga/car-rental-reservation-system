@@ -15,8 +15,8 @@
 				<ul class="nav nav-pills nav-stacked">
 				  <li role="presentation" ><a href="{{route('rusi')}}">RUSI</a></li>
 				   <li role="presentation" class="active"><a href="{{route('honda')}}">Honda</a></li>
-				  <li role="presentation"><a href="#">Kawasaki</a></li>
-				  <li role="presentation"><a href="#">Yamaha</a></li>
+				  <li role="presentation" ><a href="{{route('kawasaki')}}">Kawasaki</a></li>
+				  <li role="presentation"><a href="{{route('yamaha')}}">Yamaha</a></li>
 				</ul>
 			</div>
 			<div class="col-md-10 well">
