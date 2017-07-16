@@ -26,9 +26,9 @@
 						    <div class="thumbnail">
 						      <img src="#" alt="image here">
 						      <div class="caption">
-						        <h3>{{$car->name}}</h3>
+						        <h3>{{$car->name}} : P{{$car->price->price}}</h3>
 						        <p>{{$car->description}}</p>
-						        <p><a href="#" class="btn btn-primary" role="button">Rent</a> <a href="#" class="btn btn-default" role="button">View</a></p>
+						        <p><a href="{{route('rent', ['car_id'=> $car->id])}}" class="btn btn-primary" role="button">Rent</a> <a href="#" class="btn btn-default" role="button">View</a></p>
 						      </div>
 						    </div>
 						  </div>

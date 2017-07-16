@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PivotTableCarReserve extends Migration
+class CreateCarClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class PivotTableCarReserve extends Migration
      */
     public function up()
     {
-        Schema::table('client_reserve', function (Blueprint $table) {
-            //
+        Schema::create('car_clients', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('car_id');
+            $table->integer('client_id');
+           
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class PivotTableCarReserve extends Migration
      */
     public function down()
     {
-        Schema::table('client_reserve', function (Blueprint $table) {
-            
-        });
+        Schema::dropIfExists('car_clients');
     }
 }
