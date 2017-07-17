@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+use Auth;
 class authcheck
 {
     /**
@@ -15,6 +15,10 @@ class authcheck
      */
     public function handle($request, Closure $next)
     {
+        if(!Auth::check()){
+            return redirect()->route('login');
+        }
+
         return $next($request);
     }
 }

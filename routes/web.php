@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use App\Category;
 use App\Car;
 use App\Price;
@@ -46,6 +47,55 @@ Route::group(['prefix'=> 'car'], function(){
 
 });
 
+Route::group(['prefix'=> 'auth'], function(){
+	Route::get('/login', [
+		'as'=> 'login',
+		'uses'=> 'user\AuthController@login'
+	]);
+
+	Route::post('/login', [
+		'as'=> 'login_check',
+		'uses'=> 'user\AuthController@login_check'
+	]);
+
+});
+
+Route::group(['prefix'=> 'staff'], function(){
+
+
+	Route::get('/main', [
+		'as'=> 'staff',
+		'uses'=> 'user\StaffController@main'
+
+	]);
+
+	Route::get('/logout', [
+		'as'=> 'logout',
+		'uses'=> 'user\StaffController@logout'
+	]);
+
+	Route::get('/cars', [
+		'as'=> 'cars',
+		'uses'=> 'user\StaffController@cars'
+	]);
+
+	Route::get('/honda', [
+		'as'=> 'staff_honda',
+		'uses'=> 'user\StaffController@honda'
+	]);
+
+	Route::get('/kawasaki', [
+		'as'=> 'staff_kawasaki',
+		'uses'=> 'user\StaffController@kawasaki'
+	]);
+
+	Route::get('/yamaha', [
+		'as'=> 'staff_yamaha',
+		'uses'=> 'user\StaffController@yamaha'
+	]);
+
+});
+
 
 
 
@@ -53,35 +103,16 @@ Route::group(['prefix'=> 'car'], function(){
 // Route::get('/addCar', function(){
 	
 // 	$price = new Price;
-// 	$price->price = '5000';
+// 	$price->price = '300';
 // 	$price->save();
 // 	 $find = Category::findOrFail(1);
 
 // 	 $car = new Car;
-// 	 $car->name = 'RUSI Pick-up Van';
+// 	 $car->name = 'RUSI Motor XRM-125';
 // 	 $car->description = 'automatic hindi na kailangan nang gasolina';
 // 	 $car->price_id = $price->id;
 // 	 $car->status = 0;
 // 	 $find->cars()->save($car);
 // });
 
-Route::get('/reserve', function(){
-	$find = Car::findOrFail(4);
-	$client = new Client;
-	$client->lname = 'badiday';
-	$client->mname = 'hokage';
-	$client->fname = 'telay';
-	$client->dob  = '1-1-1993';
-	$client->email = 'email@yahoo.com';
-	$client->contact = '435432343';
-	$client->addr = 'quezon city';
-
-	$find->client_car()->save($client);
-});
-
-// Route::get('/addCat', function(){
-// 	$car = new Category;
-// 	$car->category_name = 'YAMAHA';
-// 	$car->save();
-// });
 

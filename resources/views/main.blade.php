@@ -17,6 +17,7 @@
 				   <li role="presentation"><a href="{{route('honda')}}">Honda</a></li>
 				  <li role="presentation"><a href="{{route('kawasaki')}}">Kawasaki</a></li>
 				  <li role="presentation"><a href="{{route('yamaha')}}">Yamaha</a></li>
+				   <li role="presentation"><a href="{{route('login')}}">Staff</a></li>
 				</ul>
 			</div>
 			<div class="col-md-10 well">

@@ -93,9 +93,8 @@
 						<div class="alert alert-warning">
 							<h1>NOTE:</h1>
 						</div>
-							<h1>Car Information HEre</h1>
-							<<h3>{{$car->name}}</h3>
-							<p>{{$car->id}}</p>
+							<h1>Car Information Here</h1>
+							
 						</div>
 					</div>
 				</div>
