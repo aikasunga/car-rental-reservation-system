@@ -16,6 +16,7 @@ class Reserve_check{
 
 	public function check($cat_id){
 		$find_car = Car::findOrFail($cat_id);
+		Car::where('id',$cat_id)->update(['status'=> 1]);
 
 		$client = new Client;
 		$client->lname = 	$this->request['lname'];
@@ -27,5 +28,7 @@ class Reserve_check{
 		$client->addr = 	$this->request['addr'];
 
 		$find_car->client_car()->save($client);
+
+		return redirect()->back()->with('info', 'You have reserve your car Successfully!!');
 	}
 }

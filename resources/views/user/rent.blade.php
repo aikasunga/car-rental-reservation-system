@@ -25,6 +25,12 @@
 						<h2 class="text-center">Fill-up the Forms</h2>
 					</div>
 					<div class="panel-body">
+						@if(Session::has('info'))
+						<div class="alert alert-success">
+						  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						  <strong>OoPs!</strong>{{Session::get('info')}}
+						</div>
+					@endif
 						<div class="col-md-6">
 							<form class="form-horizontal" role="form" action="{{route('rent_request', ['car_id' => $car->id])}}" method="POST">
 

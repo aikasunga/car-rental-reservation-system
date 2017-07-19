@@ -45,6 +45,7 @@ Route::group(['prefix'=> 'car'], function(){
 		'uses'=> 'user\UserController@rent_request'
 	]);
 
+
 });
 
 Route::group(['prefix'=> 'auth'], function(){
@@ -93,6 +94,27 @@ Route::group(['prefix'=> 'staff'], function(){
 		'as'=> 'staff_yamaha',
 		'uses'=> 'user\StaffController@yamaha'
 	]);
+
+	Route::post('/rusi',[
+		'as'=> 'rusi_new',
+		'uses'=> 'user\StaffController@rusi_new'
+	]);
+
+	Route::post('/honda',[
+		'as'=> 'honda_new',
+		'uses'=> 'user\StaffController@honda_new'
+	]);
+
+	Route::post('/kawasaki',[
+		'as'=> 'kawasaki_new',
+		'uses'=> 'user\StaffController@kawasaki_new'
+	]);
+
+	Route::post('/yamaha',[
+		'as'=> 'yamaha_new',
+		'uses'=> 'user\StaffController@yamaha_new'
+	]);
+
 
 });
 

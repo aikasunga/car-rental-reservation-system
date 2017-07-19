@@ -8,7 +8,7 @@
 @section('contents')
 	<div class="container">
 		<div class="jumbotron">
-			<h1>Car Rental Reservation System</h1>
+			<h1 class="text-center">Car Rental Reservation System</h1>
 		</div>
 		<div>
 			<div class="col-md-2 well">
@@ -23,12 +23,12 @@
 			<div class="col-md-10 well">
 				@if($cars->count() > 0)
 					@foreach($cars as $car)
-						<div class="col-sm-6 col-md-4">
+						<div class="col-md-4">
 						    <div class="thumbnail">
 						      <img src="#" alt="image here">
 						      <div class="caption">
-						        <h3>{{$car->name}} : P{{$car->price->price}}</h3>
-						        <p>{{$car->description}}</p>
+						        <h4>{{$car->name}}</h4>
+						      
 						        <p>
 						        <a href="{{route('rent', ['car_id'=> $car->id])}}" class="btn btn-primary" role="button">Rent</a> 
 						        <a href="#" class="btn btn-default" role="button" data-toggle="modal" data-target="#car_info">View</a></p>
