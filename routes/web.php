@@ -137,4 +137,20 @@ Route::group(['prefix'=> 'staff'], function(){
 // 	 $find->cars()->save($car);
 // });
 
+// Route::get('/addUser', function(){
+// 	$user = new User;
+// 	$user->fname = 'Morls';
+// 	$user->lname = 'Karim';
+// 	$user->mname = 'Abdul';
+// 	$user->email = 'email@yahoo.com';
+// 	$user->password = bcrypt('email');
+// 	$user->save();
+// });
+
+Route::get('/addCat', function(){
+	$cat = new Category;
+	$cat->category_name = 'YAMAHA';
+	$cat->save();
+
+});
 

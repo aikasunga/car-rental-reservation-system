@@ -20,7 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('fname');
             $table->string('dob');
             $table->string('email');
-            $table->integer('contact');
+            $table->string('contact');
             $table->text('addr');
             $table->timestamps();
         });
